@@ -1,0 +1,22 @@
+<h1>Top 5 Songs</h1>
+
+<div class="row">
+  <% @songs.each_with_index do |song, index| %>
+		<% if index < @songs.length - 1 %>
+			<div class="col-md-6">
+		<% else %>
+		  <div class="col-md-6 col-md-offset-3">
+	 	<% end %>
+	  
+	    <div class="well">
+	      <h2><%= link_to song.name, song %></h2>
+	      <h4><%= song.artist.name %></h4>
+	      <p>
+	        <% song.rating.to_i.times do %>
+	        <i class="fa fa-star yellow" aria-hidden="true"></i>
+	        <% end %>
+	      </p>
+	     </div>
+	  </div>
+  <% end %>
+</div>
