@@ -12,6 +12,11 @@ class SongsController < ApplicationController
   def show
   end
 
+  def new_by_artist
+    @song = Song.new
+    @artists = Artist.order(:name)
+  end
+
   # GET /songs/new
   def new
     @song = Song.new

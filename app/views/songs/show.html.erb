@@ -9,7 +9,9 @@
         <i class="fa fa-star yellow" aria-hidden="true"></i>
         <% end %>
       </p>
-        <h4><%= @song.artist.name %></h4>
+      <h4><%= @song.artist.name%></h4>
+      	
+       <!--  <h4><%#= link_to @song.artist.name, artists_show_path(@song.artist) %></h4> -->
 
         
       <p>
@@ -20,7 +22,13 @@
            <i class="fa fa-trash" aria-hidden="true"></i> Delete
         <% end %>
       </p>
+
       <p>
+      	<%= link_to new_by_artist_path(@artist) do %>
+      		<i class="fa fa-music" aria-hidden="true"></i> Add another song by this artist
+      	<% end %>
+
+     	 <p>
 				<%= link_to new_song_path do%>
 				<i class="fa fa-plus-circle" aria-hidden="true"></i> New Song
 				<% end %>

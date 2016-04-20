@@ -17,6 +17,9 @@ class ArtistsController < ApplicationController
     @artist = Artist.new
   end
 
+  def top_artist
+  end
+
   # GET /artists/1/edit
   def edit
   end

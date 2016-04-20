@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'top5' => 'rock#roll'
   root 'rock#roll'
   get 'top_artist' => 'artists#top_artist'
+  get 'new_by_artist' => 'songs#new_by_artist'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
