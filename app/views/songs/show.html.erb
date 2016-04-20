@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @song.name %>
-</p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="well">
+      <h2><%= @song.name %></h2>
+      <p>
+        <% @song.rating.to_i.times do %>
+        <i class="fa fa-star yellow" aria-hidden="true"></i>
+        <% end %>
+      </p>
+        <h4><%= @song.artist.name %></h4>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @song.rating %>
-</p>
-
-<p>
-  <strong>Artist:</strong>
-  <%= @song.artist_id %>
-</p>
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+        
+      <p>
+        <%= link_to edit_song_path(@song) do %>
+           <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+        <% end %>
+        <%= link_to @song, method: :delete, data: { confirm: 'Are you sure?' } do %>
+           <i class="fa fa-trash" aria-hidden="true"></i> Delete
+        <% end %>
+      </p>
+      <p>
+				<%= link_to new_song_path do%>
+				<i class="fa fa-plus-circle" aria-hidden="true"></i> New Song
+				<% end %>
+			</p>
+    </div>
+  </div>
+</div>
